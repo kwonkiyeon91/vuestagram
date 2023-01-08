@@ -10,8 +10,12 @@
     <img src="./assets/logo.png" class="logo" />
   </div>
 
+  <h1>안녕{{ age }}</h1>
+  <button @click="changeName(10)">변경</button>
+  <p>{{ mores }}</p>
+  <button @click="getData()">더보기</button>
+
   <ConView :datas="datas" :step="step" :url="url" @write="myContent = $event" :filterName="filterName"/>
-  <button @click="more">더보기</button>
 
   <div class="footer">
     <ul class="footer-button-plus">
@@ -25,6 +29,7 @@
 import ConView from './components/ConView.vue';
 import datas from './assets/data.js'
 import axios from 'axios'
+import {mapActions, mapMutations, mapState} from 'vuex'
 
 export default {
   name: 'App',
@@ -47,7 +52,12 @@ export default {
       console.log(a)
     });
   },
+  computed: {
+    ...mapState(['name', 'age', 'likes', 'mores'])
+  },
   methods: {
+    ...mapMutations(['setMore', 'changeName', 'like']),
+    ...mapActions(['getData']),
     more() {
       // post 요청시 문법, catch는 에러가 났을때
       // axios.post('URL', {name: 'kim'}).then().catch((err) => {

@@ -9,11 +9,6 @@
 <script>
 export default {
     name: 'FilterBoxView',
-    data() {
-        return {
-            
-        }
-    },
     methods: {
         fire() {
             this.emitter.emit('filterName', this.filter)

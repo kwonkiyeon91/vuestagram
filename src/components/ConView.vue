@@ -1,7 +1,7 @@
 <template>
   <div>
     <div v-if="step == 0">
-      <PostView :datas="datas" :filterName="filterName"/>
+      <PostView v-for="data in datas" :key="data" :data="data" :filterName="filterName" />
     </div>
 
     <!-- 필터선택페이지 -->

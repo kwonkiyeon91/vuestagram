@@ -7,8 +7,14 @@
     <div class="post-image" :class="data.filter" :style="`background-image: url(${data.postImage})`">
     </div>
     <div class="post-content">
-        <p @click="$store.commit('like')">likes: {{ $store.state.likes}}</p>
-        <p><span>{{data.name}}</span> {{data.content}}</p>
+        <div class="like-btn" v-if="$store.state.datas[i].liked == false" @click="$store.commit('like', i)">
+            <img src="../assets/like.png" alt="좋아요"/>
+        </div>
+        <div class="like-btn" v-if="$store.state.datas[i].liked == true" @click="$store.commit('like', i)">
+            <img src="../assets/liked.png" alt="좋아요"/>
+        </div>
+        <p>좋아요 {{ $store.state.datas[i].likes}}</p>
+        <p><span class="user-name">{{data.name}}</span> {{data.content}}</p>
         <p>{{data.date}}</p>
     </div>
   </div>
@@ -19,7 +25,8 @@ export default {
     name: 'PostView',
     props: {
       data: Object,
-      filterName: String
+      filterName: String,
+      i: Number
     }
 }
 </script>
@@ -31,8 +38,11 @@ export default {
 .user {
     display: flex;
     align-items: center;
-        width: 100%;
-    padding: 0 10px;
+    width: 100%;
+    padding: 10px;
+}
+.user-name {
+    font-weight: 600;
 }
 .user .user-image {
     width: 30px;
@@ -48,5 +58,16 @@ export default {
 }
 .post-content {
     padding: 0 10px;
+}
+.post-content p {
+    margin: 5px 0;
+}
+.post-content .like-btn{
+    width: 28px;
+    margin-top: 10px;
+}
+.post-content .like-btn img{
+    width: 100%;
+    cursor: pointer;
 }
 </style>

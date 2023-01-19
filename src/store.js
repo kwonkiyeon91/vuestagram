@@ -15,10 +15,6 @@ const store = createStore({
     setMore(state){
         state.moreCount++
     },
-    changeName(state, payload) {
-        state.age += parseInt(payload)
-        
-    },
     like(state, payload) {
         if (state.datas[payload].liked == false) {
             state.datas[payload].likes ++

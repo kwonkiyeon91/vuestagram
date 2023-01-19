@@ -32,42 +32,5 @@ export default {
 </script>
 
 <style>
-.post {
-    margin-bottom: 20px;
-}
-.user {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    padding: 10px;
-}
-.user-name {
-    font-weight: 600;
-}
-.user .user-image {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    margin-right: 10px;
-}
-.post-image {
-    padding: 1px;
-    height: 450px;
-    background-position: 50%;
-    background-size: cover;
-}
-.post-content {
-    padding: 0 10px;
-}
-.post-content p {
-    margin: 5px 0;
-}
-.post-content .like-btn{
-    width: 28px;
-    margin-top: 10px;
-}
-.post-content .like-btn img{
-    width: 100%;
-    cursor: pointer;
-}
+
 </style>

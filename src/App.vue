@@ -2,12 +2,16 @@
     <div>
         <div class="header">
             <ul class="header-button-left">
-            <li v-if="step == 2 || step == 1" @click="step--">Cancel</li>
-            <li v-if="step == 0">Cancel</li>
+                <li v-if="step == 2 || step == 1" @click="step--">Cancel</li>
+                <li v-if="step == 0">&lt;</li>
             </ul>
             <ul class="header-button-right">
-            <li v-if="step == 0 || step == 1" @click="step++">Next</li>
-            <li v-if="step == 2" @click="publish">발행</li>
+                <li class="write" v-if="step == 0" >            
+                    <input @change="upload" type="file" id="file" class="inputfile" />
+                    <label for="file" class="input-plus">+</label>
+                </li>
+                <li class="add" v-if="step == 1" @click="step++">다음</li>
+                <li class="add" v-if="step == 2" @click="publish">발행</li>
             </ul>
             <img src="./assets/logo.png" class="logo" />
         </div>
@@ -17,13 +21,13 @@
         <div class="more" v-if="step == 0">
             <button @click="more()">더 보기</button>
         </div>
-
+        <!--
         <div class="footer">
             <ul class="footer-button-plus">
             <input @change="upload" type="file" id="file" class="inputfile" />
             <label for="file" class="input-plus">+</label>
             </ul>
-        </div>
+        </div> -->
     </div>
 </template>
 

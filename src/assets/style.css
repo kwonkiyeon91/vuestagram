@@ -1,18 +1,19 @@
 body, p, div, span { margin: 0; padding: 0; } 
  ul { padding: 5px; list-style-type: none; } 
+ #app { box-sizing: border-box; font-family: "consolas"; margin-top: 60px; width: 100%; max-width: 460px; margin: auto; position: relative; border-right: 1px solid #eee; border-left: 1px solid #eee; padding-bottom: 30px; } 
  .logo { width: 180px; margin: auto; display: block; position: absolute; left: 0; right: 0; top: 13px; } 
- .header { width: 100%; height: 40px; background-color: white; padding-bottom: 8px; position: sticky; top: 0; z-index: 100; } 
- .header-button-left { color: skyblue; float: left; width: 50px; padding-left: 20px; cursor: pointer; margin-top: 10px; } 
- .header-button-right { color: skyblue; float: right; width: 50px; cursor: pointer; margin-top: 10px; } 
- .footer { width: 100%; position: sticky; bottom: 0; padding-bottom: 10px; background-color: white; } 
- .footer-button-plus { width: 80px; margin: auto; text-align: center; cursor: pointer; font-size: 24px; padding-top: 12px; } 
+ .header { width: 100%; height: 40px; background-color: white; padding-bottom: 20px; position: sticky; top: 0; z-index: 100; } 
+ .header-button-left { color: #000; float: left; width: 50px; font-size: 31px; padding-left: 20px; cursor: pointer; margin: 0; } 
+ .header-button-right { float: right; width: 50px; cursor: pointer; margin-top: 10px; } 
+ .header-button-right li.write { color: #000; width: 20px; height: 20px; border: 2px #000 solid; border-radius: 5px; font-size: 24px; line-height: 0.8; text-align: center; margin-left: 10px;} 
+ .header-button-right li.add { font-size: 19px; font-weight: 600; text-align: center; margin-right: 10px; } 
+
  .sample-box { width: 100%; height: 600px; background-color: bisque; } 
  .inputfile { display: none; } 
  .input-plus { cursor: pointer; } 
- #app { box-sizing: border-box; font-family: "consolas"; margin-top: 60px; width: 100%; max-width: 460px; margin: auto; position: relative; border-right: 1px solid #eee; border-left: 1px solid #eee; } 
  .tab { display: none; } 
  .more { display: flex; justify-content: center; } 
- .more button { width: 200px; height: 30px; border-radius: 5px; border: none; background: #000000; color: #ffffff; cursor: pointer; } 
+ .more button { width: 200px; height: 50px; font-size: 15px; border-radius: 5px; border: none; background: #000000; color: #ffffff; cursor: pointer; } 
 
  .upload-image { width: 100%; height: 450px; background: cornflowerblue; background-size: cover; } 
  .filters { display: flex; overflow-x: scroll; } 
@@ -24,3 +25,13 @@ body, p, div, span { margin: 0; padding: 0; }
  .write-box { border: none; width: 90%; height: 100px; padding: 15px; margin: auto; display: block; outline: none; } 
  .filter-name { font-size: 18px; font-weight: 600; } 
  .filter-item { width: 100px; height: 100px; margin: 10px 10px 10px auto; padding: 8px; display: inline-block; color : #000; background-size: cover; background-position : center; text-align: center; cursor: pointer; } 
+
+ .post { margin-bottom: 20px; } 
+.user { display: flex; align-items: center; padding: 0 10px 10px; } 
+.user-name { font-weight: 600; } 
+.user .user-image { width: 30px; height: 30px; border-radius: 50%; margin-right: 10px; } 
+.post-image { padding: 1px; height: 450px; background-position: 50%; background-size: cover; } 
+.post-content { padding: 0 10px; } 
+.post-content p { margin: 5px 0; } 
+.post-content .like-btn { width: 28px; margin-top: 10px; } 
+.post-content .like-btn img { width: 100%; cursor: pointer; } 
